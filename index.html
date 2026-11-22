@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Trabajos Prácticos ✨ | Ingeniería de Requerimientos - Vidal</title>
+  <meta name="description" content="Portafolio académico de Ingeniería de Requerimientos. Trabajos Prácticos Individuales y Grupales con visor directo de documentos PDF e imágenes en una estética moderna, colorida y rosa.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 1. Barra de Navegación Superior -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="nav-brand">
+        <div class="brand-badge">🌸</div>
+        <div class="brand-text">
+          <h1>Ingeniería de Requerimientos</h1>
+          <span id="navStudentSub">Portafolio Académico • Vidal ✨</span>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <button id="btnHelp" type="button" class="nav-btn" title="Instrucciones para agregar nuevos trabajos">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          <span>Guía de Uso</span>
+        </button>
+
+        <button id="btnThemeToggle" type="button" class="theme-toggle-btn" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
+          <!-- Icono Sol / Luna dinámico -->
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Sección Hero Estética y Colorida -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-meta-badge">
+          <span class="sparkle">✨</span>
+          <span id="heroPeriodBadge">2do Año • 2do Cuatrimestre 🌸</span>
+        </div>
+
+        <h2 class="hero-title">
+          Portafolio de <span class="gradient-text">Trabajos Prácticos</span> 💖
+        </h2>
+        
+        <p class="hero-subtitle" id="heroBioText">
+          Colección académica de actividades de Ingeniería de Requerimientos: técnicas de elicitación, especificación según IEEE 830, modelado UML & BPMN, historias de usuario BDD con Gherkin y matrices de trazabilidad.
+        </p>
+
+        <!-- Stats Rápidas Coloridas -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number" id="statTotal">7</span>
+            <span class="stat-label">📚 Trabajos Totales</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="statIndividual">4</span>
+            <span class="stat-label">🌸 Entregas Individuales</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="statGroup">3</span>
+            <span class="stat-label">👥 Proyectos Grupales</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="statAvgGrade">10 / 10</span>
+            <span class="stat-label">⭐ Calificación Promedio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Controles: Pestañas Principales (Individuales / Grupales) y Filtros -->
+    <section class="controls-section">
+      <div class="container">
+        
+        <div class="tabs-wrapper">
+          <!-- Pestañas Principales Segmentadas -->
+          <div class="tabs-nav" role="tablist">
+            <button type="button" class="tab-btn active" id="tabIndividual" data-category="individual" role="tab" aria-selected="true">
+              <span>🌸 Trabajos Individuales</span>
+              <span class="tab-count" id="countIndividual">4</span>
+            </button>
+
+            <button type="button" class="tab-btn" id="tabGroup" data-category="grupal" role="tab" aria-selected="false">
+              <span>💖 Trabajos Grupales</span>
+              <span class="tab-count" id="countGroup">3</span>
+            </button>
+          </div>
+
+          <!-- Buscador en tiempo real -->
+          <div class="search-filter-bar">
+            <div class="search-box">
+              <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="searchInput" class="search-input" placeholder="Buscar por tema, palabra clave o integrante..." autocomplete="off">
+              <button type="button" id="searchClear" class="search-clear" title="Limpiar búsqueda">✕</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtros por Temas / Etiquetas Coloridas -->
+        <div class="tag-chips-wrapper" id="tagChipsContainer">
+          <button type="button" class="tag-chip active" data-tag="all">✨ Todos los temas</button>
+          <button type="button" class="tag-chip" data-tag="Elicitación">🌸 Elicitación</button>
+          <button type="button" class="tag-chip" data-tag="SRS">📄 SRS / IEEE 830</button>
+          <button type="button" class="tag-chip" data-tag="Casos de Uso">🔮 Casos de Uso</button>
+          <button type="button" class="tag-chip" data-tag="Historias de Usuario">⚡ User Stories & Gherkin</button>
+          <button type="button" class="tag-chip" data-tag="BPMN 2.0">🎨 BPMN 2.0</button>
+          <button type="button" class="tag-chip" data-tag="Trazabilidad RTM">🎯 Trazabilidad RTM</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Grid de Tarjetas de Trabajos Prácticos -->
+    <section class="cards-section">
+      <div class="container">
+        <div class="cards-grid" id="cardsGrid">
+          <!-- Renderizado dinámicamente mediante app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. Visor de Documentos Integrado (Modal Elegante y Rosa) -->
+  <div class="modal-overlay" id="documentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container" id="modalContainer">
+      
+      <!-- Barra Superior del Modal -->
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <div class="modal-doc-icon" id="modalDocIcon">
+            🌸
+          </div>
+          <div class="modal-title-wrap">
+            <h3 class="modal-doc-title" id="modalTitle">Título del Trabajo</h3>
+            <div class="modal-doc-meta" id="modalMeta">PDF • 1.2 MB • Aprobado ✨</div>
+          </div>
+        </div>
+
+        <!-- Selector de Modo dentro del Visor: Documento vs Ficha Técnica -->
+        <div class="modal-mode-tabs">
+          <button type="button" class="modal-tab-btn active" id="modalTabViewer" title="Ver documento original">
+            👁️ Documento
+          </button>
+          <button type="button" class="modal-tab-btn" id="modalTabDetails" title="Ver objetivos, requerimientos y conclusiones">
+            📋 Ficha Técnica
+          </button>
+        </div>
+
+        <!-- Acciones del Modal -->
+        <div class="modal-header-actions">
+          <button type="button" class="modal-action-btn" id="btnOpenNewTab" title="Abrir en pestaña nueva">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </button>
+
+          <button type="button" class="modal-action-btn" id="btnFullscreen" title="Pantalla completa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+          </button>
+
+          <a id="btnDownloadDoc" class="modal-action-btn" download title="Descargar documento">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </a>
+
+          <button type="button" class="modal-action-btn close" id="btnCloseModal" title="Cerrar visor (Esc)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Zoom (Solo cuando es imagen/diagrama) -->
+      <div class="modal-toolbar" id="modalImageToolbar" style="display:none;">
+        <button type="button" class="modal-action-btn" id="btnZoomOut" title="Reducir zoom">－</button>
+        <span class="zoom-level-text" id="zoomLevel">100%</span>
+        <button type="button" class="modal-action-btn" id="btnZoomIn" title="Aumentar zoom">＋</button>
+        <button type="button" class="modal-action-btn" id="btnZoomReset" title="Restablecer tamaño">1:1</button>
+      </div>
+
+      <!-- Contenido del Visor -->
+      <div class="modal-body">
+        
+        <!-- Vista 1: Visor del archivo embebido (PDF o Imagen) -->
+        <div class="viewer-content active" id="viewModeViewer">
+          <iframe id="modalIframe" class="doc-iframe" title="Visor de PDF" style="display:none;"></iframe>
+
+          <div class="image-viewer-stage" id="imageViewerStage" style="display:none;">
+            <img id="modalImage" class="doc-image" alt="Diagrama de Requerimientos">
+          </div>
+
+          <div class="viewer-fallback-banner" id="viewerNotice">
+            <span>🌸 ¿Deseas verlo en tu aplicación nativa?</span>
+            <a href="#" id="modalDirectLink" target="_blank" rel="noopener noreferrer">Abrir en pestaña nueva ↗</a>
+          </div>
+        </div>
+
+        <!-- Vista 2: Ficha Técnica Estructurada -->
+        <div class="details-content" id="viewModeDetails">
+          <div class="details-grid" id="modalStructuredContent">
+            <!-- Rellenado dinámicamente -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Modal de Guía / Ayuda -->
+  <div class="modal-overlay help-modal" id="helpModal" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <div class="modal-doc-icon">✨</div>
+          <div>
+            <h3 class="modal-doc-title">Cómo agregar y personalizar tus TPs</h3>
+            <span class="modal-doc-meta">Guía paso a paso fácil y rápida 🌸</span>
+          </div>
+        </div>
+        <button type="button" class="modal-action-btn close" id="btnCloseHelp">✕</button>
+      </div>
+      <div class="help-body">
+        <div class="help-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Copia tus documentos PDF o imágenes</h4>
+            <p>Guarda tus archivos de trabajos prácticos directamente en la carpeta <code>docs/</code> de este proyecto.</p>
+            <div class="code-block">docs/mi-tp-nuevo.pdf</div>
+          </div>
+        </div>
+
+        <div class="help-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Edita el archivo js/data.js</h4>
+            <p>Abre <code>js/data.js</code> y añade tu trabajo práctico a la lista <code>PORTFOLIO_DATA.works</code>:</p>
+            <div class="code-block">{
+  id: "tp-nuevo",
+  category: "individual", // o "grupal"
+  tpNumber: "TP #05",
+  title: "Nuevo Trabajo Práctico",
+  fileUrl: "docs/mi-tp-nuevo.pdf",
+  fileType: "pdf", // o "image"
+  tags: ["SRS", "Validación"]
+}</div>
+          </div>
+        </div>
+
+        <div class="help-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>¡Listo en segundos! 💖</h4>
+            <p>Guarda el archivo y recarga el navegador. Tu entrega aparecerá automáticamente con su respectiva tarjeta y su visor integrado.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <h4>🌸 Ingeniería de Requerimientos • Vidal</h4>
+        <p>Portafolio Académico Digital • 2do Año - Segundo Cuatrimestre ✨</p>
+      </div>
+      <div class="footer-links">
+        <button type="button" id="footerHelpBtn" class="nav-btn">🌸 Guía de TPs</button>
+        <button type="button" id="btnScrollTop" class="nav-btn" title="Volver al inicio">↑ Subir</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toastMessage">✨ Acción completada</div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
